@@ -35,7 +35,11 @@ document.querySelector(".num_0").addEventListener("click", function () {
     output_2.innerHTML += "0";
 });
 document.querySelector(".num_dot").addEventListener("click", function () {
+    if (output_2.innerHTML.includes(".")) {
+        output_2.innerHTML = output_2.innerHTML;
+    } else {
     output_2.innerHTML += ".";
+    }
 });
 document.querySelector(".op_divide").addEventListener("click", function () {
     if (output_1.innerHTML == "") {
