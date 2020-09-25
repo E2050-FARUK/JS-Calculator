@@ -2,6 +2,8 @@
 var output_2 = document.querySelector(".output_2"); 
 var output_1 = document.querySelector(".output_1");
 
+
+
 document.querySelector(".num_1").addEventListener("click", function () {
     output_2.innerHTML += "1";
 });
@@ -39,7 +41,24 @@ document.querySelector(".op_divide").addEventListener("click", function () {
     if (output_1.innerHTML == "") {
     output_1.innerHTML = Number(output_2.innerHTML) + "÷";
     } else {
-        output_1.innerHTML = Number(output_1.innerHTML.slice(0,-1)) / Number(output_2.innerHTML) + "÷";
+        switch (output_1.innerHTML.slice(-1)){
+            case "+":
+                output_1.innerHTML = Number(output_1.innerHTML.slice(0,-1)) + Number(output_2.innerHTML) + "÷";
+                output_2.innerHTML = "";
+                break;
+            case "-":
+                output_1.innerHTML = Number(output_1.innerHTML.slice(0,-1)) - Number(output_2.innerHTML) + "÷";
+                output_2.innerHTML = "";
+                break;
+            case "*":
+                output_1.innerHTML = Number(output_1.innerHTML.slice(0,-1)) * Number(output_2.innerHTML) + "÷";
+                output_2.innerHTML = "";
+                break;
+            case "÷":
+            output_1.innerHTML = Number(output_1.innerHTML.slice(0,-1)) / Number(output_2.innerHTML) + "÷";
+            output_2.innerHTML = "";
+            break;
+        }
     }
     output_2.innerHTML = "";
 });
@@ -47,15 +66,50 @@ document.querySelector(".op_multiply").addEventListener("click", function () {
     if (output_1.innerHTML == "") {
     output_1.innerHTML = Number(output_2.innerHTML) + "*";
     } else {
-        output_1.innerHTML = Number(output_1.innerHTML.slice(0,-1)) * Number(output_2.innerHTML) + "*";
+        switch (output_1.innerHTML.slice(-1)){
+            case "+":
+                output_1.innerHTML = Number(output_1.innerHTML.slice(0,-1)) + Number(output_2.innerHTML) + "*";
+                output_2.innerHTML = "";
+                break;
+            case "-":
+                output_1.innerHTML = Number(output_1.innerHTML.slice(0,-1)) - Number(output_2.innerHTML) + "*";
+                output_2.innerHTML = "";
+                break;
+            case "*":
+                output_1.innerHTML = Number(output_1.innerHTML.slice(0,-1)) * Number(output_2.innerHTML) + "*";
+                output_2.innerHTML = "";
+                break;
+            case "÷":
+            output_1.innerHTML = Number(output_1.innerHTML.slice(0,-1)) / Number(output_2.innerHTML) + "*";
+            output_2.innerHTML = "";
+            break;
+        }
     }
     output_2.innerHTML = "";
 });
 document.querySelector(".op_plus").addEventListener("click", function () {
+     
     if (output_1.innerHTML == "") {
         output_1.innerHTML = Number(output_2.innerHTML) + "+";
     } else {
-        output_1.innerHTML = Number(output_1.innerHTML.slice(0,-1)) + Number(output_2.innerHTML) + "+";
+        switch (output_1.innerHTML.slice(-1)){
+            case "+":
+                output_1.innerHTML = Number(output_1.innerHTML.slice(0,-1)) + Number(output_2.innerHTML) + "+";
+                output_2.innerHTML = "";
+                break;
+            case "-":
+                output_1.innerHTML = Number(output_1.innerHTML.slice(0,-1)) - Number(output_2.innerHTML) + "+";
+                output_2.innerHTML = "";
+                break;
+            case "*":
+                output_1.innerHTML = Number(output_1.innerHTML.slice(0,-1)) * Number(output_2.innerHTML) + "+";
+                output_2.innerHTML = "";
+                break;
+            case "÷":
+            output_1.innerHTML = Number(output_1.innerHTML.slice(0,-1)) / Number(output_2.innerHTML) + "+";
+            output_2.innerHTML = "";
+            break;
+        }
     }
     output_2.innerHTML = "";
 });
@@ -63,7 +117,24 @@ document.querySelector(".op_minus").addEventListener("click", function () {
     if (output_1.innerHTML == "") {
     output_1.innerHTML = Number(output_2.innerHTML) + "-";
     } else {
-        output_1.innerHTML = Number(output_1.innerHTML.slice(0,-1)) - Number(output_2.innerHTML) + "-";
+        switch (output_1.innerHTML.slice(-1)){
+            case "+":
+                output_1.innerHTML = Number(output_1.innerHTML.slice(0,-1)) + Number(output_2.innerHTML) + "-";
+                output_2.innerHTML = "";
+                break;
+            case "-":
+                output_1.innerHTML = Number(output_1.innerHTML.slice(0,-1)) - Number(output_2.innerHTML) + "-";
+                output_2.innerHTML = "";
+                break;
+            case "*":
+                output_1.innerHTML = Number(output_1.innerHTML.slice(0,-1)) * Number(output_2.innerHTML) + "-";
+                output_2.innerHTML = "";
+                break;
+            case "÷":
+            output_1.innerHTML = Number(output_1.innerHTML.slice(0,-1)) / Number(output_2.innerHTML) + "-";
+            output_2.innerHTML = "";
+            break;
+        }
     }
     output_2.innerHTML = "";
 });
